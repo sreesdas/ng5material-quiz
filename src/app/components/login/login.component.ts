@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { TimeService } from '../../services/time.service';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +16,14 @@ export class LoginComponent implements OnInit {
   validationErr:boolean;
   errormsg: string;
 
-  constructor(private loginService: LoginService, private http:HttpClient, private router: Router) { }
+  constructor(private loginService: LoginService, private timeService: TimeService, private http:HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.username = '';
     this.password = '';
     this.validationErr = false;
     this.loginService.currentUser.subscribe(username => this.username = username);
+    this.timeService.setHeading('Login');
   }
 
   login() {
