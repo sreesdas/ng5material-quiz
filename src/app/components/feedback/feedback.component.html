@@ -1,0 +1,18 @@
+<mat-card>
+
+
+<div class="fb-container">
+
+  <h3>Write Your Feedback</h3>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Name" [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Textarea" [(ngModel)]="feedback"></textarea>
+  </mat-form-field>
+
+</div>
+
+<button mat-raised-button color="accent" (click)="submit()">Submit</button>
+
+</mat-card>

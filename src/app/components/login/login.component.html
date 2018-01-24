@@ -1,0 +1,19 @@
+<mat-card>
+
+
+<div class="login-container">
+
+  <h3>Please Login to continue</h3>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="CPF Number" [(ngModel)]="username">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Domain Password" type="password" [(ngModel)]="password">
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="login()">Login</button>
+
+  <p *ngIf="validationErr">{{errormsg}}</p>
+
+</div>
+
+</mat-card>

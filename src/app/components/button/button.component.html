@@ -1,0 +1,36 @@
+
+<mat-horizontal-stepper>
+  <mat-step *ngFor="let item of questions">
+    <ng-template matStepLabel>Question {{item.id + 1}}</ng-template>
+
+    <div>
+      <h1> {{item.question}} ?</h1>
+
+      <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile
+            *ngFor="let tile of item.options"
+            [colspan]="2"
+            [rowspan]="1"
+            [style.background]="tile.color">
+            <button class="btn-option" mat-button (click)="buttonClicked(item,tile)"><span class="option-label">{{tile.id+1}})</span> {{tile.text}}</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </div>
+
+    <div class="btn-group">
+      <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+      <button mat-raised-button color="accent" matStepperNext>Next</button>
+    </div>
+
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Submit</ng-template>
+    <div *ngIf="unattended > 0"> You haven't answered {{unattended}} questions. </div>
+    <h3> Proceed with Submit? </h3>
+    <div>
+      <button mat-raised-button color="accent" (click)="submit()">Submit</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

@@ -1,0 +1,18 @@
+<mat-card>
+
+<mat-list>
+  <div>
+	  <div class="heading" >Name<span style="float:right">Score</span></div>
+  </div>
+  <hr />
+  <mat-list-item *ngFor="let each of people">
+    <img matListAvatar src="assets/1.png" *ngIf="each.score == maxscore">
+    <img matListAvatar src="assets/2.png" *ngIf="each.score >= maxscore*0.5  && each.score < maxscore">
+    <img matListAvatar src="assets/3.png" *ngIf="each.score < maxscore*0.1">
+    <h3 mat-line> {{each.name}} </h3>
+    <span style="float:right">{{each.score}}</span>
+  </mat-list-item>
+</mat-list>
+
+
+</mat-card>
