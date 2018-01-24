@@ -38,7 +38,7 @@ export class AppComponent {
   ngOnInit() {
 
     this.timeService.currentHeading.subscribe(heading => this.title = heading);
-
+    
     this.timeService.isStarted.subscribe(status => {
 
       this.isStarted = status;
@@ -94,6 +94,7 @@ export class AppComponent {
 
   logout() {
     alert('Successfully logged out!');
+    this.router.navigate(['/']);
   }
 
 }

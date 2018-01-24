@@ -18,7 +18,7 @@ export class LeaderComponent implements OnInit {
   ngOnInit() {
 
   	this.timeService.setHeading('LeaderBoard');
-  	this.http.get('http://localhost/quiz/getLeaderBoard.php')
+  	this.http.get('http://10.207.16.60/quiz/getLeaderBoard.php')
   	.subscribe(data => {
   		this.maxscore = data[0]['score'];
   		this.people = data;

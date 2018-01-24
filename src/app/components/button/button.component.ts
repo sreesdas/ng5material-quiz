@@ -21,7 +21,7 @@ export class ButtonComponent implements OnInit {
 
   constructor(private http: HttpClient, private timeService: TimeService, private scoreService: ScoreService, private router: Router) {
       this.score = 0;
-      this.unattended = 4;
+      this.unattended = 5;
       this.http.get('http://10.207.16.60/quiz/get.php')
       .subscribe( data => this.questions = data );
    }
@@ -63,14 +63,14 @@ export class ButtonComponent implements OnInit {
        each.color = 'white';
   	this.questions[item.id].options[tile.id].color = 'lightblue';
 
-    if(item.guid == tile.id){
+    if(item.cors == tile.id){
       this.userinput[item.id] = true;
     }
     else {
       this.userinput[item.id] = false;
     }
 
-    this.unattended = 4 - this.userinput.length;
+    this.unattended = 5 - this.userinput.length;
     console.log(this.unattended);
     for (let each of this.userinput){
       if(each == null){

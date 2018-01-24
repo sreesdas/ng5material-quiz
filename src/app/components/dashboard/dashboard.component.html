@@ -7,11 +7,9 @@
 </h3>
 
 <ul>
-  <li>Rule 1</li>
-  <li>Rule 1</li>
-  <li>Rule 1</li>
+  <li *ngFor="let rule of rules" >{{rule}}</li>
 </ul>
 
-<button mat-raised-button color="primary" (click)="startQuiz()">Start</button>
+<button mat-raised-button color="accent" (click)="startQuiz()">Start</button>
 
 </mat-card>

@@ -13,7 +13,11 @@ export class DashboardComponent implements OnInit {
 
   isStarted = false;
   username: string;
-  rules: any = ['Rule 1', 'Rule 2', 'Rule 3'];
+  rules: any = ['This quiz consists of 20 multiple choice questions',
+                'Duration of this quiz is 6 minutes',
+                'Once you click the start button, the timer starts',
+                'You can go back and change your answers but only before submitting',
+                'If you leave the quiz without submitting, your score will be 0'];
 
   constructor(private router: Router, private loginService: LoginService,
     private http: HttpClient, private timeService: TimeService) { }
@@ -26,16 +30,24 @@ export class DashboardComponent implements OnInit {
 
   startQuiz() {
 
-    const url = 'http://10.207.16.60/quiz/hasDone.php?cpf=' + this.username;
+    let url = 'http://10.207.16.60/quiz/hasDone.php?cpf=' + this.username;
     this.http.get(url)
     .subscribe(data => {
       if (data["done"] === "no"){
         this.timeService.setStart(true);
+
+        let url = 'http://10.207.16.60/quiz/quizAttended.php?cpf=' + this.username;
+        this.http.get(url)
+        .subscribe(data => {
+          console.log(data);
+        });
+
         this.router.navigate(['/button']);
       } else {
         alert('You have already done the quiz!');
       }
     });
+
   }
 
 }

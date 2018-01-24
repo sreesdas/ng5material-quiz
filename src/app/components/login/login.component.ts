@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
 
     if(this.username != '' && this.password != ''){
       var url = 'http://10.207.16.60/quiz/auth.php';
-      var body = {username: this.username, password: this.password};
+      console.log(btoa(this.password));
+      var body = {username: this.username, password: btoa(this.password) };
       this.http.post(url, body)
       .subscribe(
         data => {
