@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NgMatScss
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# ng5material-quiz
+A simple interactive quiz application made with angular 5 and ng-material
+>>>>>>> 6ad7ef90a38f4abca16efe44cccdc43a8ddb86ca
