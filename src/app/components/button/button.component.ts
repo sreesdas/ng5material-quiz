@@ -46,7 +46,6 @@ export class ButtonComponent implements OnInit {
   }
 
   submit(){
-
     this.hasSubmitted = true;
     for (let each of this.userinput){
       if(each){

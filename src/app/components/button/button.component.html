@@ -19,8 +19,8 @@
     </div>
 
     <div class="btn-group">
-      <button mat-raised-button color="primary" matStepperPrevious>Previous Question</button>
-      <button mat-raised-button color="accent" matStepperNext>Next Question</button>
+      <button mat-raised-button color="primary" matStepperPrevious>Previous</button>
+      <button mat-raised-button color="accent" matStepperNext>Next</button>
     </div>
 
   </mat-step>
@@ -30,6 +30,7 @@
     <div *ngIf="unattended > 0"> You haven't answered {{unattended}} questions. </div>
     <h3> Proceed with Submit? </h3>
     <div>
+      <button mat-raised-button color="primary" matStepperPrevious>Go Back</button>
       <button mat-raised-button color="accent" (click)="submit()">Submit</button>
     </div>
   </mat-step>
